@@ -1,452 +1,1010 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		208EAE8E195A91D3009BFA64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208EAE8D195A91D3009BFA64 /* Foundation.framework */; };
-		208EAE90195A91D3009BFA64 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208EAE8F195A91D3009BFA64 /* CoreGraphics.framework */; };
-		208EAE92195A91D3009BFA64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208EAE91195A91D3009BFA64 /* UIKit.framework */; };
-		208EAE98195A91D3009BFA64 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 208EAE96195A91D3009BFA64 /* InfoPlist.strings */; };
-		208EAE9A195A91D3009BFA64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 208EAE99195A91D3009BFA64 /* main.m */; };
-		208EAE9E195A91D3009BFA64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 208EAE9D195A91D3009BFA64 /* AppDelegate.m */; };
-		208EAEA0195A91D3009BFA64 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208EAE9F195A91D3009BFA64 /* Images.xcassets */; };
-		208EAEA7195A91D3009BFA64 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208EAEA6195A91D3009BFA64 /* XCTest.framework */; };
-		208EAEA8195A91D3009BFA64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208EAE8D195A91D3009BFA64 /* Foundation.framework */; };
-		208EAEA9195A91D3009BFA64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208EAE91195A91D3009BFA64 /* UIKit.framework */; };
-		208EAEB1195A91D3009BFA64 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 208EAEAF195A91D3009BFA64 /* InfoPlist.strings */; };
-		208EAEB3195A91D3009BFA64 /* ios_tumblrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 208EAEB2195A91D3009BFA64 /* ios_tumblrTests.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		208EAEAA195A91D3009BFA64 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 208EAE82195A91D3009BFA64 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 208EAE89195A91D3009BFA64;
-			remoteInfo = ios_tumblr;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		208EAE8A195A91D3009BFA64 /* ios_tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_tumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		208EAE8D195A91D3009BFA64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		208EAE8F195A91D3009BFA64 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		208EAE91195A91D3009BFA64 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		208EAE95195A91D3009BFA64 /* ios_tumblr-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ios_tumblr-Info.plist"; sourceTree = "<group>"; };
-		208EAE97195A91D3009BFA64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		208EAE99195A91D3009BFA64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		208EAE9B195A91D3009BFA64 /* ios_tumblr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios_tumblr-Prefix.pch"; sourceTree = "<group>"; };
-		208EAE9C195A91D3009BFA64 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		208EAE9D195A91D3009BFA64 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		208EAE9F195A91D3009BFA64 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		208EAEA5195A91D3009BFA64 /* ios_tumblrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios_tumblrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		208EAEA6195A91D3009BFA64 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		208EAEAE195A91D3009BFA64 /* ios_tumblrTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ios_tumblrTests-Info.plist"; sourceTree = "<group>"; };
-		208EAEB0195A91D3009BFA64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		208EAEB2195A91D3009BFA64 /* ios_tumblrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_tumblrTests.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		208EAE87195A91D3009BFA64 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				208EAE90195A91D3009BFA64 /* CoreGraphics.framework in Frameworks */,
-				208EAE92195A91D3009BFA64 /* UIKit.framework in Frameworks */,
-				208EAE8E195A91D3009BFA64 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		208EAEA2195A91D3009BFA64 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				208EAEA7195A91D3009BFA64 /* XCTest.framework in Frameworks */,
-				208EAEA9195A91D3009BFA64 /* UIKit.framework in Frameworks */,
-				208EAEA8195A91D3009BFA64 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		208EAE81195A91D3009BFA64 = {
-			isa = PBXGroup;
-			children = (
-				208EAE93195A91D3009BFA64 /* ios_tumblr */,
-				208EAEAC195A91D3009BFA64 /* ios_tumblrTests */,
-				208EAE8C195A91D3009BFA64 /* Frameworks */,
-				208EAE8B195A91D3009BFA64 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		208EAE8B195A91D3009BFA64 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				208EAE8A195A91D3009BFA64 /* ios_tumblr.app */,
-				208EAEA5195A91D3009BFA64 /* ios_tumblrTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		208EAE8C195A91D3009BFA64 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				208EAE8D195A91D3009BFA64 /* Foundation.framework */,
-				208EAE8F195A91D3009BFA64 /* CoreGraphics.framework */,
-				208EAE91195A91D3009BFA64 /* UIKit.framework */,
-				208EAEA6195A91D3009BFA64 /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		208EAE93195A91D3009BFA64 /* ios_tumblr */ = {
-			isa = PBXGroup;
-			children = (
-				208EAE9C195A91D3009BFA64 /* AppDelegate.h */,
-				208EAE9D195A91D3009BFA64 /* AppDelegate.m */,
-				208EAE9F195A91D3009BFA64 /* Images.xcassets */,
-				208EAE94195A91D3009BFA64 /* Supporting Files */,
-			);
-			path = ios_tumblr;
-			sourceTree = "<group>";
-		};
-		208EAE94195A91D3009BFA64 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				208EAE95195A91D3009BFA64 /* ios_tumblr-Info.plist */,
-				208EAE96195A91D3009BFA64 /* InfoPlist.strings */,
-				208EAE99195A91D3009BFA64 /* main.m */,
-				208EAE9B195A91D3009BFA64 /* ios_tumblr-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		208EAEAC195A91D3009BFA64 /* ios_tumblrTests */ = {
-			isa = PBXGroup;
-			children = (
-				208EAEB2195A91D3009BFA64 /* ios_tumblrTests.m */,
-				208EAEAD195A91D3009BFA64 /* Supporting Files */,
-			);
-			path = ios_tumblrTests;
-			sourceTree = "<group>";
-		};
-		208EAEAD195A91D3009BFA64 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				208EAEAE195A91D3009BFA64 /* ios_tumblrTests-Info.plist */,
-				208EAEAF195A91D3009BFA64 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		208EAE89195A91D3009BFA64 /* ios_tumblr */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 208EAEB6195A91D3009BFA64 /* Build configuration list for PBXNativeTarget "ios_tumblr" */;
-			buildPhases = (
-				208EAE86195A91D3009BFA64 /* Sources */,
-				208EAE87195A91D3009BFA64 /* Frameworks */,
-				208EAE88195A91D3009BFA64 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ios_tumblr;
-			productName = ios_tumblr;
-			productReference = 208EAE8A195A91D3009BFA64 /* ios_tumblr.app */;
-			productType = "com.apple.product-type.application";
-		};
-		208EAEA4195A91D3009BFA64 /* ios_tumblrTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 208EAEB9195A91D3009BFA64 /* Build configuration list for PBXNativeTarget "ios_tumblrTests" */;
-			buildPhases = (
-				208EAEA1195A91D3009BFA64 /* Sources */,
-				208EAEA2195A91D3009BFA64 /* Frameworks */,
-				208EAEA3195A91D3009BFA64 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				208EAEAB195A91D3009BFA64 /* PBXTargetDependency */,
-			);
-			name = ios_tumblrTests;
-			productName = ios_tumblrTests;
-			productReference = 208EAEA5195A91D3009BFA64 /* ios_tumblrTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		208EAE82195A91D3009BFA64 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Stanley Ng";
-				TargetAttributes = {
-					208EAEA4195A91D3009BFA64 = {
-						TestTargetID = 208EAE89195A91D3009BFA64;
-					};
-				};
-			};
-			buildConfigurationList = 208EAE85195A91D3009BFA64 /* Build configuration list for PBXProject "ios_tumblr" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 208EAE81195A91D3009BFA64;
-			productRefGroup = 208EAE8B195A91D3009BFA64 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				208EAE89195A91D3009BFA64 /* ios_tumblr */,
-				208EAEA4195A91D3009BFA64 /* ios_tumblrTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		208EAE88195A91D3009BFA64 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				208EAE98195A91D3009BFA64 /* InfoPlist.strings in Resources */,
-				208EAEA0195A91D3009BFA64 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		208EAEA3195A91D3009BFA64 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				208EAEB1195A91D3009BFA64 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		208EAE86195A91D3009BFA64 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				208EAE9E195A91D3009BFA64 /* AppDelegate.m in Sources */,
-				208EAE9A195A91D3009BFA64 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		208EAEA1195A91D3009BFA64 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				208EAEB3195A91D3009BFA64 /* ios_tumblrTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		208EAEAB195A91D3009BFA64 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 208EAE89195A91D3009BFA64 /* ios_tumblr */;
-			targetProxy = 208EAEAA195A91D3009BFA64 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		208EAE96195A91D3009BFA64 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				208EAE97195A91D3009BFA64 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		208EAEAF195A91D3009BFA64 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				208EAEB0195A91D3009BFA64 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		208EAEB4195A91D3009BFA64 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		208EAEB5195A91D3009BFA64 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		208EAEB7195A91D3009BFA64 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ios_tumblr/ios_tumblr-Prefix.pch";
-				INFOPLIST_FILE = "ios_tumblr/ios_tumblr-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		208EAEB8195A91D3009BFA64 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ios_tumblr/ios_tumblr-Prefix.pch";
-				INFOPLIST_FILE = "ios_tumblr/ios_tumblr-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		208EAEBA195A91D3009BFA64 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ios_tumblr.app/ios_tumblr";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ios_tumblr/ios_tumblr-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ios_tumblrTests/ios_tumblrTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		208EAEBB195A91D3009BFA64 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ios_tumblr.app/ios_tumblr";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ios_tumblr/ios_tumblr-Prefix.pch";
-				INFOPLIST_FILE = "ios_tumblrTests/ios_tumblrTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		208EAE85195A91D3009BFA64 /* Build configuration list for PBXProject "ios_tumblr" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				208EAEB4195A91D3009BFA64 /* Debug */,
-				208EAEB5195A91D3009BFA64 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		208EAEB6195A91D3009BFA64 /* Build configuration list for PBXNativeTarget "ios_tumblr" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				208EAEB7195A91D3009BFA64 /* Debug */,
-				208EAEB8195A91D3009BFA64 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		208EAEB9195A91D3009BFA64 /* Build configuration list for PBXNativeTarget "ios_tumblrTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				208EAEBA195A91D3009BFA64 /* Debug */,
-				208EAEBB195A91D3009BFA64 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 208EAE82195A91D3009BFA64 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>0D642C76BE9C44909E200281</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>133B60D7C1DD4177B33B7758</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>208EAE81195A91D3009BFA64</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>208EAE93195A91D3009BFA64</string>
+				<string>208EAEAC195A91D3009BFA64</string>
+				<string>208EAE8C195A91D3009BFA64</string>
+				<string>208EAE8B195A91D3009BFA64</string>
+				<string>E1972A1ADC2F44279C811FDA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE82195A91D3009BFA64</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0510</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Stanley Ng</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>208EAEA4195A91D3009BFA64</key>
+					<dict>
+						<key>TestTargetID</key>
+						<string>208EAE89195A91D3009BFA64</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>208EAE85195A91D3009BFA64</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>208EAE81195A91D3009BFA64</string>
+			<key>productRefGroup</key>
+			<string>208EAE8B195A91D3009BFA64</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>208EAE89195A91D3009BFA64</string>
+				<string>208EAEA4195A91D3009BFA64</string>
+			</array>
+		</dict>
+		<key>208EAE85195A91D3009BFA64</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>208EAEB4195A91D3009BFA64</string>
+				<string>208EAEB5195A91D3009BFA64</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>208EAE86195A91D3009BFA64</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>208EAE9E195A91D3009BFA64</string>
+				<string>208EAE9A195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>208EAE87195A91D3009BFA64</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>208EAE90195A91D3009BFA64</string>
+				<string>208EAE92195A91D3009BFA64</string>
+				<string>208EAE8E195A91D3009BFA64</string>
+				<string>263133D83CF94D3CB514AAD4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>208EAE88195A91D3009BFA64</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>208EAE98195A91D3009BFA64</string>
+				<string>208EAEA0195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>208EAE89195A91D3009BFA64</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>208EAEB6195A91D3009BFA64</string>
+			<key>buildPhases</key>
+			<array>
+				<string>133B60D7C1DD4177B33B7758</string>
+				<string>208EAE86195A91D3009BFA64</string>
+				<string>208EAE87195A91D3009BFA64</string>
+				<string>208EAE88195A91D3009BFA64</string>
+				<string>F579BCCD5A774F4F986601F2</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ios_tumblr</string>
+			<key>productName</key>
+			<string>ios_tumblr</string>
+			<key>productReference</key>
+			<string>208EAE8A195A91D3009BFA64</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>208EAE8A195A91D3009BFA64</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ios_tumblr.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>208EAE8B195A91D3009BFA64</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>208EAE8A195A91D3009BFA64</string>
+				<string>208EAEA5195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE8C195A91D3009BFA64</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>208EAE8D195A91D3009BFA64</string>
+				<string>208EAE8F195A91D3009BFA64</string>
+				<string>208EAE91195A91D3009BFA64</string>
+				<string>208EAEA6195A91D3009BFA64</string>
+				<string>0D642C76BE9C44909E200281</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE8D195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>208EAE8E195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAE8D195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAE8F195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>208EAE90195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAE8F195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAE91195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>208EAE92195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAE91195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAE93195A91D3009BFA64</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>208EAE9C195A91D3009BFA64</string>
+				<string>208EAE9D195A91D3009BFA64</string>
+				<string>208EAE9F195A91D3009BFA64</string>
+				<string>208EAE94195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>ios_tumblr</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE94195A91D3009BFA64</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>208EAE95195A91D3009BFA64</string>
+				<string>208EAE96195A91D3009BFA64</string>
+				<string>208EAE99195A91D3009BFA64</string>
+				<string>208EAE9B195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE95195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>ios_tumblr-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE96195A91D3009BFA64</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>208EAE97195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE97195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE98195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAE96195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAE99195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE9A195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAE99195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAE9B195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ios_tumblr-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE9C195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE9D195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAE9E195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAE9D195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAE9F195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAEA0195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAE9F195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAEA1195A91D3009BFA64</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>208EAEB3195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>208EAEA2195A91D3009BFA64</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>208EAEA7195A91D3009BFA64</string>
+				<string>208EAEA9195A91D3009BFA64</string>
+				<string>208EAEA8195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>208EAEA3195A91D3009BFA64</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>208EAEB1195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>208EAEA4195A91D3009BFA64</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>208EAEB9195A91D3009BFA64</string>
+			<key>buildPhases</key>
+			<array>
+				<string>208EAEA1195A91D3009BFA64</string>
+				<string>208EAEA2195A91D3009BFA64</string>
+				<string>208EAEA3195A91D3009BFA64</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>208EAEAB195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ios_tumblrTests</string>
+			<key>productName</key>
+			<string>ios_tumblrTests</string>
+			<key>productReference</key>
+			<string>208EAEA5195A91D3009BFA64</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>208EAEA5195A91D3009BFA64</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ios_tumblrTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>208EAEA6195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>XCTest.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/XCTest.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>208EAEA7195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAEA6195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAEA8195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAE8D195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAEA9195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAE91195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAEAA195A91D3009BFA64</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>208EAE82195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>208EAE89195A91D3009BFA64</string>
+			<key>remoteInfo</key>
+			<string>ios_tumblr</string>
+		</dict>
+		<key>208EAEAB195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>208EAE89195A91D3009BFA64</string>
+			<key>targetProxy</key>
+			<string>208EAEAA195A91D3009BFA64</string>
+		</dict>
+		<key>208EAEAC195A91D3009BFA64</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>208EAEB2195A91D3009BFA64</string>
+				<string>208EAEAD195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>ios_tumblrTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAEAD195A91D3009BFA64</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>208EAEAE195A91D3009BFA64</string>
+				<string>208EAEAF195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAEAE195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>ios_tumblrTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAEAF195A91D3009BFA64</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>208EAEB0195A91D3009BFA64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAEB0195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAEB1195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAEAF195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAEB2195A91D3009BFA64</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ios_tumblrTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208EAEB3195A91D3009BFA64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>208EAEB2195A91D3009BFA64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>208EAEB4195A91D3009BFA64</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>208EAEB5195A91D3009BFA64</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>208EAEB6195A91D3009BFA64</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>208EAEB7195A91D3009BFA64</string>
+				<string>208EAEB8195A91D3009BFA64</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>208EAEB7195A91D3009BFA64</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E1972A1ADC2F44279C811FDA</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>ios_tumblr/ios_tumblr-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>ios_tumblr/ios_tumblr-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>208EAEB8195A91D3009BFA64</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E1972A1ADC2F44279C811FDA</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>ios_tumblr/ios_tumblr-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>ios_tumblr/ios_tumblr-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>208EAEB9195A91D3009BFA64</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>208EAEBA195A91D3009BFA64</string>
+				<string>208EAEBB195A91D3009BFA64</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>208EAEBA195A91D3009BFA64</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/ios_tumblr.app/ios_tumblr</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>ios_tumblr/ios_tumblr-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>ios_tumblrTests/ios_tumblrTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>208EAEBB195A91D3009BFA64</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/ios_tumblr.app/ios_tumblr</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>ios_tumblr/ios_tumblr-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>ios_tumblrTests/ios_tumblrTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>263133D83CF94D3CB514AAD4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0D642C76BE9C44909E200281</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E1972A1ADC2F44279C811FDA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F579BCCD5A774F4F986601F2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>208EAE82195A91D3009BFA64</string>
+</dict>
+</plist>

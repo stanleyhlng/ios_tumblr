@@ -1,0 +1,16 @@
+PODS:
+  - AVHexColor (1.2.0)
+  - Reveal-iOS-SDK (1.0.4)
+  - TTTAttributedLabel (1.10.1)
+
+DEPENDENCIES:
+  - AVHexColor (~> 1.2.0)
+  - Reveal-iOS-SDK
+  - TTTAttributedLabel
+
+SPEC CHECKSUMS:
+  AVHexColor: b47099552819a98dc58d7931f0f43eb6e2308342
+  Reveal-iOS-SDK: d3c8e109d42219daaa7a6e1ad2de34f0bdbb7a88
+  TTTAttributedLabel: 94bb04f1e005616002dd2cee0262a0082e533627
+
+COCOAPODS: 0.33.1
