@@ -17,6 +17,8 @@
     [self customizeNavBarAppearance];
     [self customizeStatusBar];
     
+    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor orangeColor];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[TabBarViewController alloc] init];
