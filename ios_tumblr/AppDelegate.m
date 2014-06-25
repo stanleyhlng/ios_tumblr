@@ -8,11 +8,13 @@
 
 #import "AppDelegate.h"
 #import "TabBarViewController.h"
+#import "AVHexColor.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self customizeNavBarAppearance];
     [self customizeStatusBar];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -53,6 +55,18 @@
 - (void)customizeStatusBar
 {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
+- (void)customizeNavBarAppearance
+{
+    id navigationBarAppearance = [UINavigationBar appearance];
+    [navigationBarAppearance setTitleTextAttributes:
+    @{
+      NSForegroundColorAttributeName:[UIColor whiteColor],
+      NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f]
+    }];
+    [navigationBarAppearance setTintColor:[AVHexColor colorWithHexString:@"#F7F7F7"]];
+    [navigationBarAppearance setBarTintColor:[AVHexColor colorWithHexString:@"#334256"]];
 }
 
 @end
