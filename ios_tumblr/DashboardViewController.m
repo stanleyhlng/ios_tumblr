@@ -9,6 +9,9 @@
 #import "DashboardViewController.h"
 
 @interface DashboardViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+
+- (void)customizeTitleView;
 
 @end
 
@@ -19,7 +22,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Dashboard";
+
+        //self.title = @"Dashboard";
+        [self customizeTitleView];
     }
     return self;
 }
@@ -34,6 +39,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)customizeTitleView
+{
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo-tumblr"]];
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+
+    CGRect frame = imageView.frame;
+    frame.size.width = 230;
+    frame.size.height = imageView.frame.size.height / imageView.frame.size.width * frame.size.width;
+
+    self.navigationItem.titleView = imageView;
 }
 
 @end
