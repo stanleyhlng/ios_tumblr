@@ -13,6 +13,10 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *contentImageView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
+- (void)handleRefreshControl;
+- (void)handleReload;
 
 @end
 
@@ -50,12 +54,27 @@
     NSLog(@"image size: %f %f", self.contentImageView.frame.size.width, self.contentImageView.frame.size.height);
     self.contentScrollView.contentSize = self.contentImageView.frame.size;
     self.contentScrollView.contentInset = UIEdgeInsetsMake(0, 0, 100, 0);
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
+    [self.contentScrollView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(handleRefreshControl) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)handleRefreshControl
+{
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(handleReload) userInfo:nil repeats:NO];
+}
+
+- (void)handleReload
+{
+    [self.refreshControl endRefreshing];
 }
 
 @end

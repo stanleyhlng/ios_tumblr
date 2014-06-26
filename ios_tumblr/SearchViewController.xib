@@ -39,6 +39,6 @@
         </view>
     </objects>
     <resources>
-        <image name="view-search" width="263" height="4093"/>
+        <image name="view-search" width="264" height="4093"/>
     </resources>
 </document>
