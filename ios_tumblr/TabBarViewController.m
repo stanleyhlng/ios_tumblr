@@ -24,8 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *accountButton;
 @property (weak, nonatomic) IBOutlet UIButton *activityButton;
 
-@property (nonatomic, strong) UINavigationController *dashboardNavigationController;
 @property (nonatomic, strong) NSMutableDictionary *views;
+@property (nonatomic, strong) NSMutableDictionary *buttons;
 
 - (IBAction)handleDashboardButtonTap:(id)sender;
 - (IBAction)handleSearchButtonTap:(id)sender;
@@ -35,6 +35,8 @@
 
 - (void)loadViewWithString:(NSString *)name;
 - (void)setSelectedButtonWithString:(NSString *)name;
+- (void)setupButtons;
+- (void)setupButtonsContainer;
 
 @end
 
@@ -46,6 +48,8 @@
     if (self) {
         // Custom initialization
         
+        [self.view setBackgroundColor:[AVHexColor colorWithHexString:@"#34465c"]];
+        
         self.views =
         [@{
           @"dashboard": [[UINavigationController alloc] initWithRootViewController:[[DashboardViewController alloc] init]],
@@ -54,7 +58,6 @@
           @"account":   [[UINavigationController alloc] initWithRootViewController:[[AccountViewController alloc] init]],
           @"activity":  [[UINavigationController alloc] initWithRootViewController:[[ActivityViewController alloc] init]]
         } mutableCopy];
-       
     }
     return self;
 }
@@ -65,12 +68,7 @@
     // Do any additional setup after loading the view from its nib.
 
     [self setupButtonsContainer];
-    
-    [self setupDashboardButton];
-    [self setupSearchButton];
-    [self setupComposeButton];
-    [self setupAccountButton];
-    [self setupActivityButton];
+    [self setupButtons];
 
     [self performSelector:@selector(handleDashboardButtonTap:) withObject:nil afterDelay:1.0f];
 }
@@ -84,101 +82,10 @@
 - (void)setupButtonsContainer
 {
     [self.buttonsContainerView setBackgroundColor:[AVHexColor colorWithHexString:@"#334256"]];
-
-    return;
-}
-
-- (void)setupDashboardButton
-{
-    UIImage *image = [[self.dashboardButton currentImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-
-    [self.dashboardButton setAdjustsImageWhenHighlighted:NO];
-    [self.dashboardButton setImage:image forState:UIControlStateNormal];
-
-    if ([self.dashboardButton isHighlighted] || [self.dashboardButton isSelected]) {
-        self.dashboardButton.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
-    }
-    else {
-        self.dashboardButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    }
-}
-
-- (void)setupSearchButton
-{
-    UIImage *image = [[self.searchButton currentImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    
-    [self.searchButton setAdjustsImageWhenHighlighted:NO];
-    [self.searchButton setImage:image forState:UIControlStateNormal];
-    
-    if ([self.searchButton isHighlighted] || [self.searchButton isSelected]) {
-        self.searchButton.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
-    }
-    else {
-        self.searchButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    }
-}
-
-- (void)setupComposeButton
-{
-    UIImage *image = [[self.composeButton currentImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    
-    [self.composeButton setAdjustsImageWhenHighlighted:YES];
-    [self.composeButton setImage:image forState:UIControlStateNormal];
-    self.composeButton.backgroundColor = [AVHexColor colorWithHexString:@"#589fc8"];
-    self.composeButton.layer.cornerRadius = 5.0f;
-    
-    if ([self.composeButton isHighlighted] || [self.composeButton isSelected]) {
-        self.composeButton.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
-    }
-    else {
-        self.composeButton.tintColor = [AVHexColor colorWithHexString:@"#334256"];
-    }
-}
-
-- (void)setupAccountButton
-{
-    UIImage *image = [[self.accountButton currentImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    
-    [self.accountButton setAdjustsImageWhenHighlighted:NO];
-    [self.accountButton setImage:image forState:UIControlStateNormal];
-    
-    if ([self.accountButton isHighlighted] || [self.accountButton isSelected]) {
-        self.accountButton.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
-    }
-    else {
-        self.accountButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    }
-}
-
-- (void)setupActivityButton
-{
-    UIImage *image = [[self.activityButton currentImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    
-    [self.activityButton setAdjustsImageWhenHighlighted:NO];
-    [self.activityButton setImage:image forState:UIControlStateNormal];
-    
-    if ([self.activityButton isHighlighted] || [self.activityButton isSelected]) {
-        self.activityButton.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
-    }
-    else {
-        self.activityButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    }
 }
 
 - (IBAction)handleDashboardButtonTap:(id)sender {
     NSLog(@"Dashboard Button Tapped");
-    
-    [self.dashboardButton setSelected:YES];
-    self.dashboardButton.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
-
-    [self.searchButton setSelected:NO];
-    self.searchButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-
-    [self.accountButton setSelected:NO];
-    self.accountButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-
-    [self.activityButton setSelected:NO];
-    self.activityButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
     
     [self setSelectedButtonWithString:@"dashboard"];
     [self loadViewWithString:@"dashboard"];
@@ -187,60 +94,28 @@
 - (IBAction)handleSearchButtonTap:(id)sender {
     NSLog(@"Search Button Tapped");
 
-    [self.dashboardButton setSelected:NO];
-    self.dashboardButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    
-    [self.searchButton setSelected:YES];
-    self.searchButton.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
-    
-    [self.accountButton setSelected:NO];
-    self.accountButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    
-    [self.activityButton setSelected:NO];
-    self.activityButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    
+    [self setSelectedButtonWithString:@"search"];
     [self loadViewWithString:@"search"];
 }
 
 - (IBAction)handleComposeButtonTap:(id)sender {
     NSLog(@"Compose Button Tapped");
     
+    [self setSelectedButtonWithString:@"compose"];
     [self loadViewWithString:@"compose"];
 }
 
 - (IBAction)handleAccountButtonTap:(id)sender {
     NSLog(@"Account Button Tapped");
-
-    [self.dashboardButton setSelected:NO];
-    self.dashboardButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
     
-    [self.searchButton setSelected:NO];
-    self.searchButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    
-    [self.accountButton setSelected:YES];
-    self.accountButton.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
-    
-    [self.activityButton setSelected:NO];
-    self.activityButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    
+    [self setSelectedButtonWithString:@"account"];
     [self loadViewWithString:@"account"];
 }
 
 - (IBAction)handleActivityButtonTap:(id)sender {
     NSLog(@"Activity Button Tapped");
     
-    [self.dashboardButton setSelected:NO];
-    self.dashboardButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    
-    [self.searchButton setSelected:NO];
-    self.searchButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    
-    [self.accountButton setSelected:NO];
-    self.accountButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
-    
-    [self.activityButton setSelected:YES];
-    self.activityButton.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
-    
+    [self setSelectedButtonWithString:@"activity"];
     [self loadViewWithString:@"activity"];
 }
 
@@ -257,16 +132,76 @@
 {
     NSLog(@"Set selected with string: %@", name);
 
-    for (id key in self.views) {
-        NSLog(@"key: %@", key);
-
+    for (id key in self.buttons) {
+        
         if ([@"compose" isEqualToString:key]) {
             // COMPOSE
         }
         else {
             // DASHBOARD | SEARCH | ACCOUNT | ACTIVITY
-            
+            if ([name isEqualToString:key]) {
+                // SELECTED
+                [self.buttons[key] setSelected:YES];
+                [self.buttons[key] setTintColor:[AVHexColor colorWithHexString:@"#ffffff"]];
+            }
+            else {
+                // NOT SELECTED
+                [self.buttons[key] setSelected:NO];
+                [self.buttons[key] setTintColor:[AVHexColor colorWithHexString:@"#858d98"]];
+            }
         }
+    }
+}
+
+- (void)setupButtonWithString:(NSString *)name
+{
+    NSLog(@"Setup button with string: %@", name);
+
+    UIButton *button = self.buttons[name];
+    UIImage *image = [[button currentImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [button setImage:image forState:UIControlStateNormal];
+
+    if ([@"compose" isEqualToString:name]) {
+        // COMPOSE
+        [button setAdjustsImageWhenHighlighted:YES];
+        button.backgroundColor = [AVHexColor colorWithHexString:@"#589fc8"];
+        button.layer.cornerRadius = 5.0f;
+        
+        if ([button isHighlighted] || [button isSelected]) {
+            button.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
+        }
+        else {
+            button.tintColor = [AVHexColor colorWithHexString:@"#334256"];
+        }
+    }
+    else {
+        // DASHBOARD | SEARCH | ACCOUNT | ACTIVITY
+        [button setAdjustsImageWhenHighlighted:NO];
+        
+        if ([button isHighlighted] || [button isSelected]) {
+            button.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
+        }
+        else {
+            button.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
+        }
+    }
+}
+
+- (void)setupButtons
+{
+    if ([self.buttons count] == 0) {
+        self.buttons =
+        [@{
+           @"dashboard":    self.dashboardButton,
+           @"search":       self.searchButton,
+           @"compose":      self.composeButton,
+           @"account":      self.accountButton,
+           @"activity":     self.activityButton
+        } mutableCopy];
+    }
+    
+    for (id key in self.buttons) {
+        [self setupButtonWithString:key];
     }
 }
 
