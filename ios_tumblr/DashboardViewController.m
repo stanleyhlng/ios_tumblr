@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 
 - (void)customizeTitleView;
+- (void)customizeRightBarButton;
+- (void)handleLoginButtonTap;
 
 @end
 
@@ -25,6 +27,7 @@
 
         //self.title = @"Dashboard";
         [self customizeTitleView];
+        [self customizeRightBarButton];
     }
     return self;
 }
@@ -52,5 +55,19 @@
 
     self.navigationItem.titleView = imageView;
 }
+
+- (void)customizeRightBarButton
+{
+    UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] initWithTitle:@"Log in"
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(handleLoginButtonTap)];
+    self.navigationItem.rightBarButtonItem = loginButton;
+}
+
+- (void)handleLoginButtonTap
+{
+    NSLog(@"Login Button Tapped");
+};
 
 @end

@@ -17,8 +17,6 @@
     [self customizeNavBarAppearance];
     [self customizeStatusBar];
     
-    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor orangeColor];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[TabBarViewController alloc] init];
@@ -67,7 +65,7 @@
       NSForegroundColorAttributeName:[UIColor whiteColor],
       NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f]
     }];
-    [navigationBarAppearance setTintColor:[AVHexColor colorWithHexString:@"#F7F7F7"]];
+    [navigationBarAppearance setTintColor:[AVHexColor colorWithHexString:@"#858d98"]];
     [navigationBarAppearance setBarTintColor:[AVHexColor colorWithHexString:@"#334256"]];
 }
 
