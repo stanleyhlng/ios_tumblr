@@ -7,6 +7,7 @@
 //
 
 #import "ActivityViewController.h"
+#import "AVHexColor.h"
 
 @interface ActivityViewController ()
 
@@ -20,6 +21,7 @@
     if (self) {
         // Custom initialization
         self.title = @"Activity";
+        [self.view setBackgroundColor:[AVHexColor colorWithHexString:@"#ffffff"]];
     }
     return self;
 }
