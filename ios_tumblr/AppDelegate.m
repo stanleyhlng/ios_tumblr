@@ -66,7 +66,7 @@
       NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f]
     }];
     [navigationBarAppearance setTintColor:[AVHexColor colorWithHexString:@"#858d98"]];
-    [navigationBarAppearance setBarTintColor:[AVHexColor colorWithHexString:@"#334256"]];
+    [navigationBarAppearance setBarTintColor:[AVHexColor colorWithHexString:@"#2e3f53"]];
 }
 
 @end

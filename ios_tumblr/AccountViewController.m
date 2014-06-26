@@ -7,6 +7,7 @@
 //
 
 #import "AccountViewController.h"
+#import "AVHexColor.h"
 
 @interface AccountViewController ()
 
@@ -28,6 +29,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self.navigationController.navigationBar setHidden:YES];
+    [self.view setBackgroundColor:[AVHexColor colorWithHexString:@"#33465d"]];
+
+    UIView *statusBar = [[UIView alloc] init];
+    statusBar.frame = CGRectMake(0, 0, 320, 20);
+    statusBar.backgroundColor = [AVHexColor colorWithHexString:@"#33465d"];
+    [self.view addSubview:statusBar];
 }
 
 - (void)didReceiveMemoryWarning

@@ -47,8 +47,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
-        [self.view setBackgroundColor:[AVHexColor colorWithHexString:@"#34465c"]];
+    
+        [self.view setBackgroundColor:[AVHexColor colorWithHexString:@"#2e3f53"]];
         
         self.views =
         [@{
