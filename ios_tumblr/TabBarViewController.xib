@@ -10,6 +10,7 @@
                 <outlet property="activityButton" destination="9iZ-1m-LhO" id="5DT-Pu-Qem"/>
                 <outlet property="buttonsContainerView" destination="t6W-ys-1fB" id="3eh-5L-QIh"/>
                 <outlet property="composeButton" destination="F1n-ap-Ega" id="JJG-X2-jRT"/>
+                <outlet property="contentView" destination="1Ev-10-ZQM" id="byG-nV-B3m"/>
                 <outlet property="dashboardButton" destination="Cet-32-n4G" id="85A-qm-wky"/>
                 <outlet property="searchButton" destination="klZ-yj-YsJ" id="SRf-GR-oge"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,6 +25,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ev-10-ZQM">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="404"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t6W-ys-1fB">
                     <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -72,7 +78,6 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

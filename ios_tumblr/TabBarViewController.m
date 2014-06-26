@@ -7,10 +7,16 @@
 //
 
 #import "TabBarViewController.h"
+#import "DashboardViewController.h"
+#import "SearchViewController.h"
+#import "ComposeViewController.h"
+#import "AccountViewController.h"
+#import "ActivityViewController.h"
 #import "AVHexColor.h"
 
 @interface TabBarViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIView *buttonsContainerView;
 @property (weak, nonatomic) IBOutlet UIButton *dashboardButton;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -18,11 +24,17 @@
 @property (weak, nonatomic) IBOutlet UIButton *accountButton;
 @property (weak, nonatomic) IBOutlet UIButton *activityButton;
 
+@property (nonatomic, strong) UINavigationController *dashboardNavigationController;
+@property (nonatomic, strong) NSMutableDictionary *views;
+
 - (IBAction)handleDashboardButtonTap:(id)sender;
 - (IBAction)handleSearchButtonTap:(id)sender;
 - (IBAction)handleComposeButtonTap:(id)sender;
 - (IBAction)handleAccountButtonTap:(id)sender;
 - (IBAction)handleActivityButtonTap:(id)sender;
+
+- (void)loadViewWithString:(NSString *)name;
+- (void)setSelectedButtonWithString:(NSString *)name;
 
 @end
 
@@ -33,6 +45,16 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        self.views =
+        [@{
+          @"dashboard": [[UINavigationController alloc] initWithRootViewController:[[DashboardViewController alloc] init]],
+          @"search":    [[UINavigationController alloc] initWithRootViewController:[[SearchViewController alloc] init]],
+          @"compose":   [[UINavigationController alloc] initWithRootViewController:[[ComposeViewController alloc] init]],
+          @"account":   [[UINavigationController alloc] initWithRootViewController:[[AccountViewController alloc] init]],
+          @"activity":  [[UINavigationController alloc] initWithRootViewController:[[ActivityViewController alloc] init]]
+        } mutableCopy];
+       
     }
     return self;
 }
@@ -49,6 +71,8 @@
     [self setupComposeButton];
     [self setupAccountButton];
     [self setupActivityButton];
+
+    [self performSelector:@selector(handleDashboardButtonTap:) withObject:nil afterDelay:1.0f];
 }
 
 - (void)didReceiveMemoryWarning
@@ -155,6 +179,9 @@
 
     [self.activityButton setSelected:NO];
     self.activityButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
+    
+    [self setSelectedButtonWithString:@"dashboard"];
+    [self loadViewWithString:@"dashboard"];
 }
 
 - (IBAction)handleSearchButtonTap:(id)sender {
@@ -171,10 +198,14 @@
     
     [self.activityButton setSelected:NO];
     self.activityButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
+    
+    [self loadViewWithString:@"search"];
 }
 
 - (IBAction)handleComposeButtonTap:(id)sender {
     NSLog(@"Compose Button Tapped");
+    
+    [self loadViewWithString:@"compose"];
 }
 
 - (IBAction)handleAccountButtonTap:(id)sender {
@@ -191,6 +222,8 @@
     
     [self.activityButton setSelected:NO];
     self.activityButton.tintColor = [AVHexColor colorWithHexString:@"#858d98"];
+    
+    [self loadViewWithString:@"account"];
 }
 
 - (IBAction)handleActivityButtonTap:(id)sender {
@@ -207,6 +240,34 @@
     
     [self.activityButton setSelected:YES];
     self.activityButton.tintColor = [AVHexColor colorWithHexString:@"#ffffff"];
+    
+    [self loadViewWithString:@"activity"];
+}
+
+- (void)loadViewWithString:(NSString *)name
+{
+    NSLog(@"Load view with string: %@", name);
+    
+    UIView *view = ((UINavigationController *)self.views[name]).view;
+    view.frame = self.contentView.frame;
+    [self.contentView addSubview:view];
+}
+
+- (void)setSelectedButtonWithString:(NSString *)name
+{
+    NSLog(@"Set selected with string: %@", name);
+
+    for (id key in self.views) {
+        NSLog(@"key: %@", key);
+
+        if ([@"compose" isEqualToString:key]) {
+            // COMPOSE
+        }
+        else {
+            // DASHBOARD | SEARCH | ACCOUNT | ACTIVITY
+            
+        }
+    }
 }
 
 @end
