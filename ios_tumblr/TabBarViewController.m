@@ -318,7 +318,22 @@
 - (void)showTooltopImageView
 {
     NSLog(@"Show tooltip image view");
-    [self.tooltipImageView setHidden:NO];
+
+    if (self.tooltipImageView.hidden == YES) {
+        NSLog(@"tooltip origin: %f %f", self.tooltipImageView.frame.origin.x, self.tooltipImageView.frame.origin.y);
+        
+        [self.tooltipImageView setHidden:NO];
+
+        [UIView animateWithDuration:1.0f
+                              delay:0
+                            options:UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse
+                         animations:^{
+                             CGRect frame = self.tooltipImageView.frame;
+                             frame.origin.y = 442.0f;
+                             self.tooltipImageView.frame = frame;
+                         }
+                         completion:nil];
+    }
 }
 
 # pragma DashboardViewControllerDelegate methods
