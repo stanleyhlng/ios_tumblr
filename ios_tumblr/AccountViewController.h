@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AccountViewController : UIViewController
+@class AccountViewController;
 
+@protocol AccountViewControllerDelegate <NSObject>
+- (void)handleLoginButtonTapFromAccount:(AccountViewController *)controller message:(NSString *)message;
+@end
+
+@interface AccountViewController : UIViewController
+@property(nonatomic, weak) id <AccountViewControllerDelegate> delegate;
 @end

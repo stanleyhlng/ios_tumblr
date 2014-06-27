@@ -73,7 +73,7 @@
 - (void)handleLoginButtonTap
 {
     NSLog(@"Login Button Tapped");
-    [self.delegate handleLoginButtonTap:self message:@"Login Button Tapped"];
+    [self.delegate handleLoginButtonTapFromDashboard:self message:@"Login Button Tapped"];
 };
 
 @end

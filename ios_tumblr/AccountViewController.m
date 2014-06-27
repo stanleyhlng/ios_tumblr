@@ -11,6 +11,10 @@
 
 @interface AccountViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
+- (IBAction)handleLoginButtonTap:(id)sender;
+
 @end
 
 @implementation AccountViewController
@@ -44,6 +48,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)handleLoginButtonTap:(id)sender {
+    NSLog(@"Login Button Tap");
+    [self.delegate handleLoginButtonTapFromAccount:self message:@"Login Button Tap"];
 }
 
 @end

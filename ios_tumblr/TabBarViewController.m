@@ -79,12 +79,15 @@
         DashboardViewController *dashboardViewController = [[DashboardViewController alloc] init];
         dashboardViewController.delegate = self;
         
+        AccountViewController *accountViewController = [[AccountViewController alloc] init];
+        accountViewController.delegate = self;
+        
         self.views =
         [@{
           @"dashboard": [[UINavigationController alloc] initWithRootViewController:dashboardViewController],
           @"search":    [[UINavigationController alloc] initWithRootViewController:[[SearchViewController alloc] init]],
           @"compose":   [[UINavigationController alloc] initWithRootViewController:[[ComposeViewController alloc] init]],
-          @"account":   [[UINavigationController alloc] initWithRootViewController:[[AccountViewController alloc] init]],
+          @"account":   [[UINavigationController alloc] initWithRootViewController:accountViewController],
           @"activity":  [[UINavigationController alloc] initWithRootViewController:[[ActivityViewController alloc] init]]
         } mutableCopy];
         
@@ -314,7 +317,15 @@
 
 # pragma DashboardViewControllerDelegate methods
 
-- (void)handleLoginButtonTap:(DashboardViewController *)controller message:(NSString *)message
+- (void)handleLoginButtonTapFromDashboard:(DashboardViewController *)controller message:(NSString *)message
+{
+    NSLog(@"Handle Login Button Tap: %@", message);
+    [self showLoginView];
+}
+
+# pragma AccountViewControllerDelegate methods
+
+- (void)handleLoginButtonTapFromAccount:(AccountViewController *)controller message:(NSString *)message
 {
     NSLog(@"Handle Login Button Tap: %@", message);
     [self showLoginView];

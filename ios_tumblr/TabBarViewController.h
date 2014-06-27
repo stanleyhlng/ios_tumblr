@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "DashboardViewController.h"
+#import "AccountViewController.h"
 
-@interface TabBarViewController : UIViewController<DashboardViewControllerDelegate>
+@interface TabBarViewController : UIViewController<DashboardViewControllerDelegate,
+    AccountViewControllerDelegate
+    >
 
 @end

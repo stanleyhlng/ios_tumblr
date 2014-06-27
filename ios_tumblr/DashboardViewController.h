@@ -11,7 +11,7 @@
 @class DashboardViewController;
 
 @protocol DashboardViewControllerDelegate <NSObject>
-- (void)handleLoginButtonTap:(DashboardViewController *)controller message:(NSString *)message;
+- (void)handleLoginButtonTapFromDashboard:(DashboardViewController *)controller message:(NSString *)message;
 @end
 
 @interface DashboardViewController : UIViewController
