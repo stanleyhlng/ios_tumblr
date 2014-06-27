@@ -9,11 +9,15 @@
                 <outlet property="accountButton" destination="4Vy-JO-3fh" id="bYd-fN-giG"/>
                 <outlet property="activityButton" destination="9iZ-1m-LhO" id="5DT-Pu-Qem"/>
                 <outlet property="buttonsContainerView" destination="t6W-ys-1fB" id="3eh-5L-QIh"/>
+                <outlet property="cancelButton" destination="kTA-JR-KfS" id="dtg-uP-5BG"/>
                 <outlet property="composeButton" destination="F1n-ap-Ega" id="JJG-X2-jRT"/>
                 <outlet property="composeView" destination="jJK-SA-8K8" id="lOh-uh-50I"/>
                 <outlet property="contentView" destination="1Ev-10-ZQM" id="byG-nV-B3m"/>
                 <outlet property="dashboardButton" destination="Cet-32-n4G" id="85A-qm-wky"/>
+                <outlet property="emailTextField" destination="2wA-d1-oow" id="0Fd-Zh-dQ3"/>
+                <outlet property="loginView" destination="xs5-qd-SS4" id="Fyl-ca-fJc"/>
                 <outlet property="nevermindButton" destination="RGm-lB-aCp" id="5CO-5T-DcG"/>
+                <outlet property="passwordTextField" destination="km6-jZ-JHh" id="aL6-0K-zUA"/>
                 <outlet property="searchButton" destination="klZ-yj-YsJ" id="SRf-GR-oge"/>
                 <outlet property="tooltipImageView" destination="TUr-Ib-mvF" id="oVi-wk-81T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -103,19 +107,66 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xs5-qd-SS4">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mock-login" translatesAutoresizingMaskIntoConstraints="NO" id="YXs-me-goU">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaG-Bs-I2M">
+                            <rect key="frame" x="9" y="110" width="303" height="132"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view-container-login" translatesAutoresizingMaskIntoConstraints="NO" id="t7u-ck-TFw">
+                                    <rect key="frame" x="0.0" y="0.0" width="303" height="132"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTA-JR-KfS">
+                                    <rect key="frame" x="0.0" y="89" width="151" height="43"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="" image="button-cancel"/>
+                                    <connections>
+                                        <action selector="handleCancelButtonTap:" destination="-1" eventType="touchUpInside" id="Ag5-d8-u23"/>
+                                        <action selector="handleCancelButtonTouchDown:" destination="-1" eventType="touchDown" id="YRg-ID-p70"/>
+                                    </connections>
+                                </button>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2wA-d1-oow">
+                                    <rect key="frame" x="15" y="0.0" width="272" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="km6-jZ-JHh">
+                                    <rect key="frame" x="15" y="43" width="272" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES"/>
+                                </textField>
+                            </subviews>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
+        <image name="button-cancel" width="151" height="43"/>
         <image name="icon-account" width="35" height="35"/>
         <image name="icon-activity" width="35" height="35"/>
         <image name="icon-compose" width="35" height="35"/>
         <image name="icon-dashboard" width="35" height="35"/>
         <image name="icon-search" width="35" height="35"/>
         <image name="mock-dashboard" width="320" height="568"/>
+        <image name="mock-login" width="320" height="568"/>
         <image name="tooltip" width="171" height="62"/>
         <image name="view-compose" width="320" height="568"/>
+        <image name="view-container-login" width="303" height="131"/>
     </resources>
 </document>

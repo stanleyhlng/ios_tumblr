@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIView *composeView;
+@property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIImageView *tooltipImageView;
 
 @property (weak, nonatomic) IBOutlet UIView *buttonsContainerView;
@@ -27,6 +28,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *accountButton;
 @property (weak, nonatomic) IBOutlet UIButton *activityButton;
 @property (weak, nonatomic) IBOutlet UIButton *nevermindButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @property (nonatomic, strong) NSMutableDictionary *views;
 @property (nonatomic, strong) NSMutableDictionary *buttons;
@@ -37,14 +41,18 @@
 - (IBAction)handleAccountButtonTap:(id)sender;
 - (IBAction)handleActivityButtonTap:(id)sender;
 - (IBAction)handleNevermindButtonTap:(id)sender;
+- (IBAction)handleCancelButtonTap:(id)sender;
+- (IBAction)handleCancelButtonTouchDown:(id)sender;
 
 - (void)hideComposeView;
+- (void)hideLoginView;
 - (void)hideTooltipImageView;
 - (void)loadViewWithString:(NSString *)name;
 - (void)setSelectedButtonWithString:(NSString *)name;
 - (void)setupButtons;
 - (void)setupButtonsContainer;
 - (void)showComposeView;
+- (void)showLoginView;
 - (void)showTooltopImageView;
 
 @end
@@ -63,6 +71,10 @@
         [self.composeView setHidden:YES];
         
         [self.tooltipImageView setHidden:YES];
+        
+        [self.loginView setBackgroundColor:[AVHexColor colorWithHexString:@"#2e3f53"]];
+        [self.loginView setAlpha:0.9f];
+        [self.loginView setHidden:YES];
         
         self.views =
         [@{
@@ -105,6 +117,9 @@
     [self setSelectedButtonWithString:@"dashboard"];
     [self loadViewWithString:@"dashboard"];
     [self showTooltopImageView];
+    
+    // DEBUG
+    [self showLoginView];
 }
 
 - (IBAction)handleSearchButtonTap:(id)sender
@@ -151,10 +166,30 @@
     [self.nevermindButton setHidden:YES];
 }
 
+- (IBAction)handleCancelButtonTap:(id)sender
+{
+    NSLog(@"Cancel Button Tapped");
+    [self.cancelButton setBackgroundColor:[UIColor clearColor]];
+    
+    [self.view endEditing:YES];
+    [self.loginView setHidden:YES];
+}
+
+- (IBAction)handleCancelButtonTouchDown:(id)sender
+{
+    [self.cancelButton setBackgroundColor:[AVHexColor colorWithHexString:@"#d9d9d9"]];
+}
+
 - (void)hideComposeView
 {
     NSLog(@"Hide compose view");
     [self.composeView setHidden:YES];
+}
+
+- (void)hideLoginView
+{
+    NSLog(@"Hide login view");
+    [self.loginView setHidden:YES];
 }
 
 - (void)hideTooltipImageView
@@ -260,6 +295,14 @@
     NSLog(@"Show compose view");
     [self.composeView setHidden:NO];
     [self.nevermindButton setHidden:NO];
+}
+
+- (void)showLoginView
+{
+    NSLog(@"Show login view");
+    [self.loginView setHidden:NO];
+    
+    [self.emailTextField becomeFirstResponder];
 }
 
 - (void)showTooltopImageView
