@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DashboardViewController.h"
 #import "AccountViewController.h"
+#import "ActivityViewController.h"
 
-@interface TabBarViewController : UIViewController<DashboardViewControllerDelegate,
-    AccountViewControllerDelegate
-    >
+@interface TabBarViewController : UIViewController<DashboardViewControllerDelegate,AccountViewControllerDelegate, ActivityViewControllerDelegate>
 
 @end

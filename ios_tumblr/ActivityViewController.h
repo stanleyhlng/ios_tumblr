@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ActivityViewController : UIViewController
+@class ActivityViewController;
 
+@protocol ActivityViewControllerDelegate <NSObject>
+- (void)handleLoginButtonTapFromActivity:(ActivityViewController *)controller message:(NSString *)message;
+@end
+
+@interface ActivityViewController : UIViewController
+@property(nonatomic, weak) id <ActivityViewControllerDelegate> delegate;
 @end

@@ -15,6 +15,7 @@
                 <outlet property="contentView" destination="1Ev-10-ZQM" id="byG-nV-B3m"/>
                 <outlet property="dashboardButton" destination="Cet-32-n4G" id="85A-qm-wky"/>
                 <outlet property="emailTextField" destination="2wA-d1-oow" id="0Fd-Zh-dQ3"/>
+                <outlet property="loginBackgroundView" destination="WT6-tz-CKH" id="lH8-iB-vfu"/>
                 <outlet property="loginView" destination="xs5-qd-SS4" id="Fyl-ca-fJc"/>
                 <outlet property="nevermindButton" destination="RGm-lB-aCp" id="5CO-5T-DcG"/>
                 <outlet property="passwordTextField" destination="km6-jZ-JHh" id="aL6-0K-zUA"/>
@@ -115,6 +116,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WT6-tz-CKH">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaG-Bs-I2M">
                             <rect key="frame" x="9" y="110" width="303" height="132"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -149,7 +155,6 @@
                             </subviews>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

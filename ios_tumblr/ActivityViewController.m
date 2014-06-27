@@ -10,7 +10,7 @@
 #import "AVHexColor.h"
 
 @interface ActivityViewController ()
-
+- (IBAction)handleLoginButtonTap:(id)sender;
 @end
 
 @implementation ActivityViewController
@@ -36,6 +36,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)handleLoginButtonTap:(id)sender
+{
+    NSLog(@"Login Button Tapped");
+    [self.delegate handleLoginButtonTapFromActivity:self message:@"Login Button Tapped"];
 }
 
 @end

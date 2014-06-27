@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIView *composeView;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
+@property (weak, nonatomic) IBOutlet UIView *loginBackgroundView;
 @property (weak, nonatomic) IBOutlet UIImageView *tooltipImageView;
 
 @property (weak, nonatomic) IBOutlet UIView *buttonsContainerView;
@@ -72,8 +73,8 @@
         
         [self.tooltipImageView setHidden:YES];
         
-        [self.loginView setBackgroundColor:[AVHexColor colorWithHexString:@"#2e3f53"]];
-        [self.loginView setAlpha:0.9f];
+        [self.loginBackgroundView setBackgroundColor:[AVHexColor colorWithHexString:@"#2e3f53"]];
+        [self.loginBackgroundView setAlpha:0.9f];
         [self.loginView setHidden:YES];
         
         DashboardViewController *dashboardViewController = [[DashboardViewController alloc] init];
@@ -82,13 +83,16 @@
         AccountViewController *accountViewController = [[AccountViewController alloc] init];
         accountViewController.delegate = self;
         
+        ActivityViewController *activityViewController = [[ActivityViewController alloc] init];
+        activityViewController.delegate = self;
+        
         self.views =
         [@{
           @"dashboard": [[UINavigationController alloc] initWithRootViewController:dashboardViewController],
           @"search":    [[UINavigationController alloc] initWithRootViewController:[[SearchViewController alloc] init]],
           @"compose":   [[UINavigationController alloc] initWithRootViewController:[[ComposeViewController alloc] init]],
           @"account":   [[UINavigationController alloc] initWithRootViewController:accountViewController],
-          @"activity":  [[UINavigationController alloc] initWithRootViewController:[[ActivityViewController alloc] init]]
+          @"activity":  [[UINavigationController alloc] initWithRootViewController:activityViewController]
         } mutableCopy];
         
     }
@@ -305,7 +309,9 @@
 {
     NSLog(@"Show login view");
     [self.loginView setHidden:NO];
-    
+
+    [self.emailTextField setText:@""];
+    [self.passwordTextField setText:@""];
     [self.emailTextField becomeFirstResponder];
 }
 
@@ -326,6 +332,14 @@
 # pragma AccountViewControllerDelegate methods
 
 - (void)handleLoginButtonTapFromAccount:(AccountViewController *)controller message:(NSString *)message
+{
+    NSLog(@"Handle Login Button Tap: %@", message);
+    [self showLoginView];
+}
+
+# pragma ActivityViewControllerDelegate methods
+
+- (void)handleLoginButtonTapFromActivity:(ActivityViewController *)controller message:(NSString *)message
 {
     NSLog(@"Handle Login Button Tap: %@", message);
     [self showLoginView];

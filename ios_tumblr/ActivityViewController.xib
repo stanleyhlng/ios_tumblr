@@ -28,6 +28,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="327" height="578"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fc-d6-5k8">
+                            <rect key="frame" x="172" y="361" width="107" height="47"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="handleLoginButtonTap:" destination="-1" eventType="touchUpInside" id="7Z7-65-YQ7"/>
+                            </connections>
+                        </button>
                     </subviews>
                 </scrollView>
             </subviews>
