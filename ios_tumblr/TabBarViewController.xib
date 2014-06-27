@@ -10,8 +10,10 @@
                 <outlet property="activityButton" destination="9iZ-1m-LhO" id="5DT-Pu-Qem"/>
                 <outlet property="buttonsContainerView" destination="t6W-ys-1fB" id="3eh-5L-QIh"/>
                 <outlet property="composeButton" destination="F1n-ap-Ega" id="JJG-X2-jRT"/>
+                <outlet property="composeView" destination="jJK-SA-8K8" id="lOh-uh-50I"/>
                 <outlet property="contentView" destination="1Ev-10-ZQM" id="byG-nV-B3m"/>
                 <outlet property="dashboardButton" destination="Cet-32-n4G" id="85A-qm-wky"/>
+                <outlet property="nevermindButton" destination="RGm-lB-aCp" id="5CO-5T-DcG"/>
                 <outlet property="searchButton" destination="klZ-yj-YsJ" id="SRf-GR-oge"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -75,6 +77,27 @@
                         </button>
                     </subviews>
                 </view>
+                <view alpha="0.90000000000000002" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJK-SA-8K8">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view-compose" translatesAutoresizingMaskIntoConstraints="NO" id="p8B-wy-hfr">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                    </subviews>
+                </view>
+                <button clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGm-lB-aCp">
+                    <rect key="frame" x="0.0" y="515" width="320" height="53"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Nevermind">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="handleNevermindButtonTap:" destination="-1" eventType="touchUpInside" id="P1l-h5-mF8"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -86,6 +109,7 @@
         <image name="icon-compose" width="35" height="35"/>
         <image name="icon-dashboard" width="35" height="35"/>
         <image name="icon-search" width="35" height="35"/>
+        <image name="view-compose" width="320" height="568"/>
         <image name="view-dashboard" width="320" height="568"/>
     </resources>
 </document>

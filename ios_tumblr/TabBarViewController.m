@@ -17,12 +17,15 @@
 @interface TabBarViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIView *composeView;
+
 @property (weak, nonatomic) IBOutlet UIView *buttonsContainerView;
 @property (weak, nonatomic) IBOutlet UIButton *dashboardButton;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet UIButton *composeButton;
 @property (weak, nonatomic) IBOutlet UIButton *accountButton;
 @property (weak, nonatomic) IBOutlet UIButton *activityButton;
+@property (weak, nonatomic) IBOutlet UIButton *nevermindButton;
 
 @property (nonatomic, strong) NSMutableDictionary *views;
 @property (nonatomic, strong) NSMutableDictionary *buttons;
@@ -32,11 +35,15 @@
 - (IBAction)handleComposeButtonTap:(id)sender;
 - (IBAction)handleAccountButtonTap:(id)sender;
 - (IBAction)handleActivityButtonTap:(id)sender;
+- (IBAction)handleNevermindButtonTap:(id)sender;
 
+- (void)hideComposeView;
 - (void)loadViewWithString:(NSString *)name;
 - (void)setSelectedButtonWithString:(NSString *)name;
 - (void)setupButtons;
 - (void)setupButtonsContainer;
+- (void)showComposeView;
+
 
 @end
 
@@ -49,6 +56,9 @@
         // Custom initialization
     
         [self.view setBackgroundColor:[AVHexColor colorWithHexString:@"#2e3f53"]];
+        
+        [self.composeView setBackgroundColor:[UIColor redColor]];
+        [self.composeView setHidden:YES];
         
         self.views =
         [@{
@@ -84,39 +94,59 @@
     [self.buttonsContainerView setBackgroundColor:[AVHexColor colorWithHexString:@"#334256"]];
 }
 
-- (IBAction)handleDashboardButtonTap:(id)sender {
+- (IBAction)handleDashboardButtonTap:(id)sender
+{
     NSLog(@"Dashboard Button Tapped");
     
     [self setSelectedButtonWithString:@"dashboard"];
     [self loadViewWithString:@"dashboard"];
 }
 
-- (IBAction)handleSearchButtonTap:(id)sender {
+- (IBAction)handleSearchButtonTap:(id)sender
+{
     NSLog(@"Search Button Tapped");
 
     [self setSelectedButtonWithString:@"search"];
     [self loadViewWithString:@"search"];
 }
 
-- (IBAction)handleComposeButtonTap:(id)sender {
+- (IBAction)handleComposeButtonTap:(id)sender
+{
     NSLog(@"Compose Button Tapped");
     
     [self setSelectedButtonWithString:@"compose"];
-    [self loadViewWithString:@"compose"];
+    //[self loadViewWithString:@"compose"];
+
+    [self showComposeView];
 }
 
-- (IBAction)handleAccountButtonTap:(id)sender {
+- (IBAction)handleAccountButtonTap:(id)sender
+{
     NSLog(@"Account Button Tapped");
     
     [self setSelectedButtonWithString:@"account"];
     [self loadViewWithString:@"account"];
 }
 
-- (IBAction)handleActivityButtonTap:(id)sender {
+- (IBAction)handleActivityButtonTap:(id)sender
+{
     NSLog(@"Activity Button Tapped");
     
     [self setSelectedButtonWithString:@"activity"];
     [self loadViewWithString:@"activity"];
+}
+
+- (IBAction)handleNevermindButtonTap:(id)sender
+{
+    NSLog(@"Nevermind Button Tapped");
+    [self hideComposeView];
+    [self.nevermindButton setHidden:YES];
+}
+
+- (void)hideComposeView
+{
+    NSLog(@"Hide compose view");
+    [self.composeView setHidden:YES];
 }
 
 - (void)loadViewWithString:(NSString *)name
@@ -189,6 +219,7 @@
 
 - (void)setupButtons
 {
+    // Dashboard | Search | Compose | Account | Activity
     if ([self.buttons count] == 0) {
         self.buttons =
         [@{
@@ -203,6 +234,18 @@
     for (id key in self.buttons) {
         [self setupButtonWithString:key];
     }
+    
+    // Nevermind
+    [self.nevermindButton setHidden:YES];
+    [self.nevermindButton setBackgroundColor:[AVHexColor colorWithHexString:@"#3d4d61"]];
+    [self.nevermindButton setTintColor:[AVHexColor colorWithHexString:@"#858d98"]];
+}
+
+- (void)showComposeView
+{
+    NSLog(@"Show compose view");
+    [self.composeView setHidden:NO];
+    [self.nevermindButton setHidden:NO];
 }
 
 @end
