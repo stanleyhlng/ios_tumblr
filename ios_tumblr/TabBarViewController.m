@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIView *composeView;
+@property (weak, nonatomic) IBOutlet UIImageView *tooltipImageView;
 
 @property (weak, nonatomic) IBOutlet UIView *buttonsContainerView;
 @property (weak, nonatomic) IBOutlet UIButton *dashboardButton;
@@ -38,12 +39,13 @@
 - (IBAction)handleNevermindButtonTap:(id)sender;
 
 - (void)hideComposeView;
+- (void)hideTooltipImageView;
 - (void)loadViewWithString:(NSString *)name;
 - (void)setSelectedButtonWithString:(NSString *)name;
 - (void)setupButtons;
 - (void)setupButtonsContainer;
 - (void)showComposeView;
-
+- (void)showTooltopImageView;
 
 @end
 
@@ -59,6 +61,8 @@
         
         [self.composeView setBackgroundColor:[UIColor redColor]];
         [self.composeView setHidden:YES];
+        
+        [self.tooltipImageView setHidden:YES];
         
         self.views =
         [@{
@@ -100,6 +104,7 @@
     
     [self setSelectedButtonWithString:@"dashboard"];
     [self loadViewWithString:@"dashboard"];
+    [self showTooltopImageView];
 }
 
 - (IBAction)handleSearchButtonTap:(id)sender
@@ -108,6 +113,7 @@
 
     [self setSelectedButtonWithString:@"search"];
     [self loadViewWithString:@"search"];
+    [self hideTooltipImageView];
 }
 
 - (IBAction)handleComposeButtonTap:(id)sender
@@ -126,6 +132,7 @@
     
     [self setSelectedButtonWithString:@"account"];
     [self loadViewWithString:@"account"];
+    [self showTooltopImageView];
 }
 
 - (IBAction)handleActivityButtonTap:(id)sender
@@ -134,6 +141,7 @@
     
     [self setSelectedButtonWithString:@"activity"];
     [self loadViewWithString:@"activity"];
+    [self showTooltopImageView];
 }
 
 - (IBAction)handleNevermindButtonTap:(id)sender
@@ -147,6 +155,12 @@
 {
     NSLog(@"Hide compose view");
     [self.composeView setHidden:YES];
+}
+
+- (void)hideTooltipImageView
+{
+    NSLog(@"Hide tooltip image view");
+    [self.tooltipImageView setHidden:YES];
 }
 
 - (void)loadViewWithString:(NSString *)name
@@ -246,6 +260,12 @@
     NSLog(@"Show compose view");
     [self.composeView setHidden:NO];
     [self.nevermindButton setHidden:NO];
+}
+
+- (void)showTooltopImageView
+{
+    NSLog(@"Show tooltip image view");
+    [self.tooltipImageView setHidden:NO];
 }
 
 @end

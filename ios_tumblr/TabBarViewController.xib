@@ -15,6 +15,7 @@
                 <outlet property="dashboardButton" destination="Cet-32-n4G" id="85A-qm-wky"/>
                 <outlet property="nevermindButton" destination="RGm-lB-aCp" id="5CO-5T-DcG"/>
                 <outlet property="searchButton" destination="klZ-yj-YsJ" id="SRf-GR-oge"/>
+                <outlet property="tooltipImageView" destination="TUr-Ib-mvF" id="oVi-wk-81T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
