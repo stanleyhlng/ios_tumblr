@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *composeView;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIView *loginBackgroundView;
+@property (weak, nonatomic) IBOutlet UIView *loginPanelContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *tooltipImageView;
 
 @property (weak, nonatomic) IBOutlet UIView *buttonsContainerView;
@@ -308,11 +309,31 @@
 - (void)showLoginView
 {
     NSLog(@"Show login view");
-    [self.loginView setHidden:NO];
+    
+    if (self.loginView.hidden == YES) {
+        [self.loginView setHidden:NO];
 
-    [self.emailTextField setText:@""];
-    [self.passwordTextField setText:@""];
-    [self.emailTextField becomeFirstResponder];
+        [self.emailTextField setText:@""];
+        [self.passwordTextField setText:@""];
+        [self.emailTextField becomeFirstResponder];
+
+        NSLog(@"Login Panel @ origin: %f %f", self.loginPanelContainerView.frame.origin.x, self.loginPanelContainerView.frame.origin.y);
+       
+        CGRect target = self.loginPanelContainerView.frame;
+        CGRect source = target;
+        source.origin.y += 50;
+        self.loginPanelContainerView.frame = source;
+        
+        [UIView animateWithDuration:1.0f
+                              delay:0.0f
+             usingSpringWithDamping:0.5f
+              initialSpringVelocity:0.8f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.loginPanelContainerView.frame = target;
+                         }
+                         completion:nil];
+    }
 }
 
 - (void)showTooltopImageView
@@ -320,7 +341,7 @@
     NSLog(@"Show tooltip image view");
 
     if (self.tooltipImageView.hidden == YES) {
-        NSLog(@"tooltip origin: %f %f", self.tooltipImageView.frame.origin.x, self.tooltipImageView.frame.origin.y);
+        NSLog(@"Tooltip @ origin: %f %f", self.tooltipImageView.frame.origin.x, self.tooltipImageView.frame.origin.y);
         
         [self.tooltipImageView setHidden:NO];
 

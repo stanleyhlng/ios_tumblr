@@ -16,6 +16,7 @@
                 <outlet property="dashboardButton" destination="Cet-32-n4G" id="85A-qm-wky"/>
                 <outlet property="emailTextField" destination="2wA-d1-oow" id="0Fd-Zh-dQ3"/>
                 <outlet property="loginBackgroundView" destination="WT6-tz-CKH" id="lH8-iB-vfu"/>
+                <outlet property="loginPanelContainerView" destination="ZaG-Bs-I2M" id="Rsh-Go-jC5"/>
                 <outlet property="loginView" destination="xs5-qd-SS4" id="Fyl-ca-fJc"/>
                 <outlet property="nevermindButton" destination="RGm-lB-aCp" id="5CO-5T-DcG"/>
                 <outlet property="passwordTextField" destination="km6-jZ-JHh" id="aL6-0K-zUA"/>
