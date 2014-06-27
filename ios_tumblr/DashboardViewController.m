@@ -7,6 +7,7 @@
 //
 
 #import "DashboardViewController.h"
+#import "AVHexColor.h"
 
 @interface DashboardViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
@@ -36,6 +37,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self.view setBackgroundColor:[AVHexColor colorWithHexString:@"#33465d"]];
+
     [self.navigationController.navigationBar setTranslucent:NO];
 }
 
