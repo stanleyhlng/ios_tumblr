@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DashboardViewController : UIViewController
+@class DashboardViewController;
 
+@protocol DashboardViewControllerDelegate <NSObject>
+- (void)handleLoginButtonTap:(DashboardViewController *)controller message:(NSString *)message;
+@end
+
+@interface DashboardViewController : UIViewController
+@property (nonatomic, weak) id <DashboardViewControllerDelegate> delegate;
 @end

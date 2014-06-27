@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DashboardViewController.h"
 
-@interface TabBarViewController : UIViewController
+@interface TabBarViewController : UIViewController<DashboardViewControllerDelegate>
 
 @end

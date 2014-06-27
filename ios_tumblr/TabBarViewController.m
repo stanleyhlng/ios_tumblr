@@ -76,14 +76,18 @@
         [self.loginView setAlpha:0.9f];
         [self.loginView setHidden:YES];
         
+        DashboardViewController *dashboardViewController = [[DashboardViewController alloc] init];
+        dashboardViewController.delegate = self;
+        
         self.views =
         [@{
-          @"dashboard": [[UINavigationController alloc] initWithRootViewController:[[DashboardViewController alloc] init]],
+          @"dashboard": [[UINavigationController alloc] initWithRootViewController:dashboardViewController],
           @"search":    [[UINavigationController alloc] initWithRootViewController:[[SearchViewController alloc] init]],
           @"compose":   [[UINavigationController alloc] initWithRootViewController:[[ComposeViewController alloc] init]],
           @"account":   [[UINavigationController alloc] initWithRootViewController:[[AccountViewController alloc] init]],
           @"activity":  [[UINavigationController alloc] initWithRootViewController:[[ActivityViewController alloc] init]]
         } mutableCopy];
+        
     }
     return self;
 }
@@ -117,9 +121,6 @@
     [self setSelectedButtonWithString:@"dashboard"];
     [self loadViewWithString:@"dashboard"];
     [self showTooltopImageView];
-    
-    // DEBUG
-    [self showLoginView];
 }
 
 - (IBAction)handleSearchButtonTap:(id)sender
@@ -135,7 +136,7 @@
 {
     NSLog(@"Compose Button Tapped");
     
-    [self setSelectedButtonWithString:@"compose"];
+    //[self setSelectedButtonWithString:@"compose"];
     //[self loadViewWithString:@"compose"];
 
     [self showComposeView];
@@ -309,6 +310,14 @@
 {
     NSLog(@"Show tooltip image view");
     [self.tooltipImageView setHidden:NO];
+}
+
+# pragma DashboardViewControllerDelegate methods
+
+- (void)handleLoginButtonTap:(DashboardViewController *)controller message:(NSString *)message
+{
+    NSLog(@"Handle Login Button Tap: %@", message);
+    [self showLoginView];
 }
 
 @end
