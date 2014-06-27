@@ -10,6 +10,7 @@
                 <outlet property="activityButton" destination="9iZ-1m-LhO" id="5DT-Pu-Qem"/>
                 <outlet property="buttonsContainerView" destination="t6W-ys-1fB" id="3eh-5L-QIh"/>
                 <outlet property="cancelButton" destination="kTA-JR-KfS" id="dtg-uP-5BG"/>
+                <outlet property="composeBackgroundView" destination="Brm-kv-oEk" id="jTv-qR-mS8"/>
                 <outlet property="composeButton" destination="F1n-ap-Ega" id="JJG-X2-jRT"/>
                 <outlet property="composeView" destination="jJK-SA-8K8" id="lOh-uh-50I"/>
                 <outlet property="contentView" destination="1Ev-10-ZQM" id="byG-nV-B3m"/>
@@ -84,11 +85,16 @@
                     <rect key="frame" x="8" y="448" width="174" height="92"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <view alpha="0.90000000000000002" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJK-SA-8K8">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJK-SA-8K8">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view-compose" translatesAutoresizingMaskIntoConstraints="NO" id="p8B-wy-hfr">
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Brm-kv-oEk">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view-compose" translatesAutoresizingMaskIntoConstraints="NO" id="p8B-wy-hfr">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>

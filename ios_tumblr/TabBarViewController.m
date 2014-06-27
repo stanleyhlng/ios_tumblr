@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIView *composeView;
+@property (weak, nonatomic) IBOutlet UIView *composeBackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIView *loginBackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *loginPanelContainerView;
@@ -69,7 +70,8 @@
     
         [self.view setBackgroundColor:[AVHexColor colorWithHexString:@"#2e3f53"]];
         
-        [self.composeView setBackgroundColor:[UIColor redColor]];
+        [self.composeBackgroundView setBackgroundColor:[UIColor redColor]];
+        [self.composeBackgroundView setAlpha:0.9f];
         [self.composeView setHidden:YES];
         
         [self.tooltipImageView setHidden:YES];
