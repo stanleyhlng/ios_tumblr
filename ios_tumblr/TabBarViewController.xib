@@ -94,6 +94,30 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-text" translatesAutoresizingMaskIntoConstraints="NO" id="weW-To-m17">
+                            <rect key="frame" x="22" y="160" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-link" translatesAutoresizingMaskIntoConstraints="NO" id="Gmx-5C-efm">
+                            <rect key="frame" x="22" y="279" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-photo" translatesAutoresizingMaskIntoConstraints="NO" id="ZYY-Zi-lsV">
+                            <rect key="frame" x="122" y="160" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-chat" translatesAutoresizingMaskIntoConstraints="NO" id="k1U-ZG-P3O">
+                            <rect key="frame" x="121" y="279" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-quote" translatesAutoresizingMaskIntoConstraints="NO" id="cl3-za-IEO">
+                            <rect key="frame" x="219" y="160" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-video" translatesAutoresizingMaskIntoConstraints="NO" id="eVk-ys-Upw">
+                            <rect key="frame" x="219" y="279" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view-compose" translatesAutoresizingMaskIntoConstraints="NO" id="p8B-wy-hfr">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,6 +194,12 @@
     </objects>
     <resources>
         <image name="button-cancel" width="151" height="43"/>
+        <image name="button-chat" width="75" height="105"/>
+        <image name="button-link" width="75" height="105"/>
+        <image name="button-photo" width="75" height="105"/>
+        <image name="button-quote" width="75" height="105"/>
+        <image name="button-text" width="75" height="105"/>
+        <image name="button-video" width="75" height="105"/>
         <image name="icon-account" width="35" height="35"/>
         <image name="icon-activity" width="35" height="35"/>
         <image name="icon-compose" width="35" height="35"/>

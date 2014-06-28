@@ -22,8 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIView *loginBackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *loginPanelContainerView;
-@property (weak, nonatomic) IBOutlet UIImageView *tooltipImageView;
-
 @property (weak, nonatomic) IBOutlet UIView *buttonsContainerView;
 @property (weak, nonatomic) IBOutlet UIButton *dashboardButton;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -32,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *activityButton;
 @property (weak, nonatomic) IBOutlet UIButton *nevermindButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+
+@property (weak, nonatomic) IBOutlet UIImageView *tooltipImageView;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
@@ -70,7 +70,7 @@
     
         [self.view setBackgroundColor:[AVHexColor colorWithHexString:@"#2e3f53"]];
         
-        [self.composeBackgroundView setBackgroundColor:[UIColor redColor]];
+        [self.composeBackgroundView setBackgroundColor:[AVHexColor colorWithHexString:@"#2e3f53"]];
         [self.composeBackgroundView setAlpha:0.9f];
         [self.composeView setHidden:YES];
         
