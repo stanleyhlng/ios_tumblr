@@ -17,7 +17,7 @@ This is an iOS prototyping application for Tumblr.
  * [x] Optional: Show the Tumblr loading graphic before showing the trending screen. Assets for the loading graphic are included.
 
 ## Time spent
-x hours spent in total
+15 hours spent in total
 
 ## Learnings
     
