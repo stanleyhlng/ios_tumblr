@@ -6,6 +6,7 @@ ios_tumblr
 This is an iOS prototyping application for Tumblr.
 
 ## Walkthrough of all user stories
+[![image](https://raw.githubusercontent.com/wiki/stanleyhlng/ios_tumblr/assets/ios_tumblr.gif)](https://raw.githubusercontent.com/wiki/stanleyhlng/ios_tumblr/assets/ios_tumblr.gif)
 
 ## Completed user stories
  * [x] Tab bar should be implemented as a view with 5 buttons.
