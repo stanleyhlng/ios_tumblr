@@ -6,8 +6,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardViewController">
             <connections>
+                <outlet property="containerView" destination="m31-PS-m89" id="yeS-un-MLb"/>
+                <outlet property="homeImageView" destination="Si3-VV-iI8" id="Z37-h2-mlG"/>
+                <outlet property="homeProxyView" destination="MUH-rm-YQe" id="Z7k-wq-zEZ"/>
+                <outlet property="homeSpinnerImageView" destination="ZH9-dV-cyd" id="hnn-6V-hQ8"/>
                 <outlet property="loadingImageView" destination="W2R-LA-toB" id="5pf-zc-rR2"/>
-                <outlet property="textImageView" destination="tzt-hj-0Kj" id="IxC-eC-3MN"/>
+                <outlet property="titleLabel" destination="VfY-HQ-7Bv" id="zZU-cO-bZO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,8 +42,40 @@
                             <rect key="frame" x="128" y="278" width="59" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dashboard-text" translatesAutoresizingMaskIntoConstraints="NO" id="tzt-hj-0Kj">
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dashboard-text" translatesAutoresizingMaskIntoConstraints="NO" id="tzt-hj-0Kj">
                             <rect key="frame" x="0.0" y="273" width="320" height="89"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m31-PS-m89">
+                            <rect key="frame" x="0.0" y="273" width="320" height="89"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is your Dashboard." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfY-HQ-7Bv">
+                                    <rect key="frame" x="0.0" y="6" width="320" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="When you follow some blogs, their latest posts will show up here!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="JjS-9V-Wpp">
+                                    <rect key="frame" x="20" y="35" width="280" height="47"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.52156862745098043" green="0.55294117647058827" blue="0.59999999999999998" alpha="1" colorSpace="deviceRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </view>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-home" translatesAutoresizingMaskIntoConstraints="NO" id="Si3-VV-iI8">
+                            <rect key="frame" x="128" y="197" width="64" height="63"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MUH-rm-YQe">
+                            <rect key="frame" x="128" y="197" width="64" height="63"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </view>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mock-dashboard-home-spinner" translatesAutoresizingMaskIntoConstraints="NO" id="ZH9-dV-cyd">
+                            <rect key="frame" x="88" y="152" width="144" height="122"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
@@ -52,7 +88,9 @@
     </objects>
     <resources>
         <image name="dashboard-text" width="320" height="91"/>
+        <image name="icon-home" width="59" height="62"/>
         <image name="loading-1" width="61" height="19"/>
+        <image name="mock-dashboard-home-spinner" width="145" height="109"/>
         <image name="mock-dashboard-loading" width="320" height="568"/>
         <image name="view-dashboard" width="320" height="568"/>
     </resources>
