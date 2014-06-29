@@ -48,6 +48,7 @@
 
 @property (nonatomic, strong) NSMutableDictionary *views;
 @property (nonatomic, strong) NSMutableDictionary *buttons;
+@property (nonatomic, assign) bool isDashboardLoaded;
 
 - (IBAction)handleDashboardButtonTap:(id)sender;
 - (IBAction)handleSearchButtonTap:(id)sender;
@@ -109,6 +110,7 @@
           @"activity":  [[UINavigationController alloc] initWithRootViewController:activityViewController]
         } mutableCopy];
         
+        self.isDashboardLoaded = false;
     }
     return self;
 }
@@ -141,7 +143,9 @@
     
     [self setSelectedButtonWithString:@"dashboard"];
     [self loadViewWithString:@"dashboard"];
-    [self showTooltopImageView];
+    if (self.isDashboardLoaded) {
+        [self showTooltopImageView];
+    }
 }
 
 - (IBAction)handleSearchButtonTap:(id)sender
@@ -577,6 +581,13 @@
 {
     NSLog(@"Handle Login Button Tap: %@", message);
     [self showLoginView];
+}
+
+- (void)handleLoadedFromDashboard:(DashboardViewController *)controller message:(NSString *)message
+{
+    NSLog(@"Handle Loaded from Dashboard: %@", message);
+    self.isDashboardLoaded = true;
+    [self showTooltopImageView];
 }
 
 # pragma AccountViewControllerDelegate methods

@@ -152,7 +152,10 @@
 
 - (void)updateContent
 {
-    self.homeImageView.tintColor = [AVHexColor colorWithHexString:@"#aeb5be"];
-    self.titleLabel.textColor = [AVHexColor colorWithHexString:@"#aeb5be"];
+    [UIView animateWithDuration:0.5f animations:^{
+        self.homeImageView.tintColor = [AVHexColor colorWithHexString:@"#aeb5be"];
+        self.titleLabel.textColor = [AVHexColor colorWithHexString:@"#aeb5be"];
+    }];
+    [self.delegate handleLoadedFromDashboard:self message:@"Update Content"];
 }
 @end
