@@ -11,10 +11,14 @@
 
 @interface DashboardViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *loadingImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *textImageView;
 
 - (void)customizeTitleView;
 - (void)customizeRightBarButton;
 - (void)handleLoginButtonTap;
+- (void)handleLoading;
+- (void)showText;
 
 @end
 
@@ -29,6 +33,10 @@
         //self.title = @"Dashboard";
         [self customizeTitleView];
         [self customizeRightBarButton];
+    
+        CGRect frame = self.view.frame;
+        frame.origin.y -= 64;
+        self.view.frame = frame;
     }
     return self;
 }
@@ -41,6 +49,9 @@
     [self.view setBackgroundColor:[AVHexColor colorWithHexString:@"#33465d"]];
 
     [self.navigationController.navigationBar setTranslucent:NO];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handleLoading) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(showText) userInfo:nil repeats:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,4 +87,31 @@
     [self.delegate handleLoginButtonTapFromDashboard:self message:@"Login Button Tapped"];
 };
 
+- (void)handleLoading
+{
+    NSLog(@"Setup loading");
+    
+    NSArray *imageNames = @[@"loading-1", @"loading-2", @"loading-3"];
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    for (int i = 0; i < imageNames.count; i++) {
+        [images addObject:[UIImage imageNamed:[imageNames objectAtIndexedSubscript:i]]];
+    }
+    
+    self.loadingImageView.animationImages = images;
+    self.loadingImageView.animationDuration = 0.9f;
+    [self.loadingImageView startAnimating];
+}
+
+- (void)showText
+{
+    self.textImageView.hidden = NO;
+    self.textImageView.alpha = 0;
+    [UIView animateWithDuration:0.2f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.textImageView.alpha = 1.0f;
+                     }
+                     completion:nil];
+}
 @end

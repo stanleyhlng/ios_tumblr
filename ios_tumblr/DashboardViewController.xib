@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardViewController">
             <connections>
+                <outlet property="loadingImageView" destination="W2R-LA-toB" id="5pf-zc-rR2"/>
+                <outlet property="textImageView" destination="tzt-hj-0Kj" id="IxC-eC-3MN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,8 +26,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="580"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view-dashboard" translatesAutoresizingMaskIntoConstraints="NO" id="mDu-Tj-i7K">
+                        <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view-dashboard" translatesAutoresizingMaskIntoConstraints="NO" id="mDu-Tj-i7K">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mock-dashboard-loading" translatesAutoresizingMaskIntoConstraints="NO" id="jD4-yk-CTQ">
+                            <rect key="frame" x="-5" y="0.0" width="325" height="568"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading-1" translatesAutoresizingMaskIntoConstraints="NO" id="W2R-LA-toB">
+                            <rect key="frame" x="128" y="278" width="59" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dashboard-text" translatesAutoresizingMaskIntoConstraints="NO" id="tzt-hj-0Kj">
+                            <rect key="frame" x="0.0" y="273" width="320" height="89"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
@@ -37,6 +51,9 @@
         </view>
     </objects>
     <resources>
+        <image name="dashboard-text" width="320" height="91"/>
+        <image name="loading-1" width="61" height="19"/>
+        <image name="mock-dashboard-loading" width="320" height="568"/>
         <image name="view-dashboard" width="320" height="568"/>
     </resources>
 </document>
