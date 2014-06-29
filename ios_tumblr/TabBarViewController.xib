@@ -12,6 +12,18 @@
                 <outlet property="cancelButton" destination="kTA-JR-KfS" id="dtg-uP-5BG"/>
                 <outlet property="composeBackgroundView" destination="Brm-kv-oEk" id="jTv-qR-mS8"/>
                 <outlet property="composeButton" destination="F1n-ap-Ega" id="JJG-X2-jRT"/>
+                <outlet property="composeChatImageView" destination="k1U-ZG-P3O" id="NPs-Qr-bbc"/>
+                <outlet property="composeChatProxyView" destination="2eC-Jl-BVV" id="iUQ-0n-g6f"/>
+                <outlet property="composeLinkImageView" destination="Gmx-5C-efm" id="j8x-Vl-z5Q"/>
+                <outlet property="composeLinkProxyView" destination="asp-5J-Z9e" id="pet-dU-fxO"/>
+                <outlet property="composePhotoImageView" destination="ZYY-Zi-lsV" id="LI8-97-wrd"/>
+                <outlet property="composePhotoProxyView" destination="l57-Ah-IUA" id="sPe-f0-zvL"/>
+                <outlet property="composeQuoteImageView" destination="cl3-za-IEO" id="dhI-Cd-fJe"/>
+                <outlet property="composeQuoteProxyView" destination="5o3-EW-Ymw" id="jA8-MU-1Rj"/>
+                <outlet property="composeTextImageView" destination="weW-To-m17" id="Hv9-0F-9Sp"/>
+                <outlet property="composeTextProxyView" destination="a3b-su-5FD" id="RFX-Ck-0d0"/>
+                <outlet property="composeVideoImageView" destination="eVk-ys-Upw" id="0hw-mE-emf"/>
+                <outlet property="composeVideoProxyView" destination="MLY-kO-KGZ" id="1Il-v9-K4K"/>
                 <outlet property="composeView" destination="jJK-SA-8K8" id="lOh-uh-50I"/>
                 <outlet property="contentView" destination="1Ev-10-ZQM" id="byG-nV-B3m"/>
                 <outlet property="dashboardButton" destination="Cet-32-n4G" id="85A-qm-wky"/>
@@ -98,26 +110,56 @@
                             <rect key="frame" x="22" y="160" width="78" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3b-su-5FD">
+                            <rect key="frame" x="22" y="160" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-link" translatesAutoresizingMaskIntoConstraints="NO" id="Gmx-5C-efm">
                             <rect key="frame" x="22" y="279" width="78" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asp-5J-Z9e">
+                            <rect key="frame" x="22" y="279" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-photo" translatesAutoresizingMaskIntoConstraints="NO" id="ZYY-Zi-lsV">
                             <rect key="frame" x="122" y="160" width="78" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l57-Ah-IUA">
+                            <rect key="frame" x="122" y="160" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-chat" translatesAutoresizingMaskIntoConstraints="NO" id="k1U-ZG-P3O">
                             <rect key="frame" x="121" y="279" width="78" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2eC-Jl-BVV">
+                            <rect key="frame" x="121" y="279" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-quote" translatesAutoresizingMaskIntoConstraints="NO" id="cl3-za-IEO">
                             <rect key="frame" x="219" y="160" width="78" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5o3-EW-Ymw">
+                            <rect key="frame" x="219" y="160" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button-video" translatesAutoresizingMaskIntoConstraints="NO" id="eVk-ys-Upw">
                             <rect key="frame" x="219" y="279" width="78" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MLY-kO-KGZ">
+                            <rect key="frame" x="219" y="279" width="78" height="106"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view-compose" translatesAutoresizingMaskIntoConstraints="NO" id="p8B-wy-hfr">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

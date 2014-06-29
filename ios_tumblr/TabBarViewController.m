@@ -23,6 +23,12 @@
 @property (weak, nonatomic) IBOutlet UIView *loginBackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *loginPanelContainerView;
 @property (weak, nonatomic) IBOutlet UIView *buttonsContainerView;
+@property (weak, nonatomic) IBOutlet UIView *composeTextProxyView;
+@property (weak, nonatomic) IBOutlet UIView *composeLinkProxyView;
+@property (weak, nonatomic) IBOutlet UIView *composePhotoProxyView;
+@property (weak, nonatomic) IBOutlet UIView *composeChatProxyView;
+@property (weak, nonatomic) IBOutlet UIView *composeQuoteProxyView;
+@property (weak, nonatomic) IBOutlet UIView *composeVideoProxyView;
 @property (weak, nonatomic) IBOutlet UIButton *dashboardButton;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet UIButton *composeButton;
@@ -30,8 +36,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *activityButton;
 @property (weak, nonatomic) IBOutlet UIButton *nevermindButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
-
 @property (weak, nonatomic) IBOutlet UIImageView *tooltipImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *composeTextImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *composeLinkImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *composePhotoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *composeChatImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *composeQuoteImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *composeVideoImageView;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
@@ -174,7 +185,6 @@
 {
     NSLog(@"Nevermind Button Tapped");
     [self hideComposeView];
-    [self.nevermindButton setHidden:YES];
 }
 
 - (IBAction)handleCancelButtonTap:(id)sender
@@ -195,6 +205,7 @@
 {
     NSLog(@"Hide compose view");
     [self.composeView setHidden:YES];
+    [self.nevermindButton setHidden:YES];
 }
 
 - (void)hideLoginView
@@ -305,7 +316,100 @@
 {
     NSLog(@"Show compose view");
     [self.composeView setHidden:NO];
-    [self.nevermindButton setHidden:NO];
+
+    {
+        CGRect source;
+
+        CGRect target = self.nevermindButton.frame;
+        target.origin.y = self.composeView.frame.size.height - target.size.height;
+        source = target;
+        source.origin.y = self.composeView.frame.size.height;
+        self.nevermindButton.frame = source;
+        [self.nevermindButton setHidden:NO];
+        
+        [UIView animateWithDuration:0.3f
+                              delay:0.3f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.nevermindButton.frame = target;
+                         }
+                         completion:nil];
+    }
+    
+    // GROUP 1: Photo
+    {
+        CGRect source;
+        
+        CGRect targetPhoto = self.composePhotoImageView.frame;
+        source = targetPhoto;
+        source.origin.y += 500;
+        self.composePhotoImageView.frame = source;
+
+        [UIView animateWithDuration:0.6f
+                              delay:0.0f
+             usingSpringWithDamping:0.7f
+              initialSpringVelocity:1.0f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.composePhotoImageView.frame = targetPhoto;
+                         } completion:nil];
+    }
+    
+    // GROUP 2: Text | Chat | Quote
+    {
+        CGRect source;
+        
+        CGRect targetText = self.composeTextImageView.frame;
+        source = targetText;
+        source.origin.y += 500;
+        self.composeTextImageView.frame = source;
+
+        CGRect targetChat = self.composeChatImageView.frame;
+        source = targetChat;
+        source.origin.y += 500;
+        self.composeChatImageView.frame = source;
+
+        CGRect targetQuote = self.composeQuoteImageView.frame;
+        source = targetQuote;
+        source.origin.y += 500;
+        self.composeQuoteImageView.frame = source;
+        
+        [UIView animateWithDuration:0.6f
+                              delay:0.1f
+             usingSpringWithDamping:0.7f
+              initialSpringVelocity:1.0f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.composeTextImageView.frame = targetText;
+                             self.composeChatImageView.frame = targetChat;
+                             self.composeQuoteImageView.frame = targetQuote;
+                         } completion:nil];
+    }
+    
+    // Group 3: Link | Video
+    {
+        CGRect source;
+        
+        CGRect targetLink = self.composeLinkImageView.frame;
+        source = targetLink;
+        source.origin.y += 500;
+        self.composeLinkImageView.frame = source;
+        
+        CGRect targetVideo = self.composeVideoImageView.frame;
+        source = targetVideo;
+        source.origin.y += 500;
+        self.composeVideoImageView.frame = source;
+        
+        [UIView animateWithDuration:0.6f
+                              delay:0.2f
+             usingSpringWithDamping:0.7f
+              initialSpringVelocity:1.0f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.composeLinkImageView.frame = targetLink;
+                             self.composeVideoImageView.frame = targetVideo;
+                         } completion:nil];
+    }
 }
 
 - (void)showLoginView
