@@ -204,8 +204,105 @@
 - (void)hideComposeView
 {
     NSLog(@"Hide compose view");
-    [self.composeView setHidden:YES];
-    [self.nevermindButton setHidden:YES];
+    
+    // Nevermind Button
+    {
+        self.nevermindButton.frame = CGRectMake(
+            self.nevermindButton.frame.origin.x,
+            self.composeView.frame.size.height - self.nevermindButton.frame.size.height,
+            self.nevermindButton.frame.size.width,
+            self.nevermindButton.frame.size.height
+        );
+        
+        [UIView animateWithDuration:0.3f
+                              delay:0.3f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.nevermindButton.frame = CGRectMake(
+                                 self.nevermindButton.frame.origin.x,
+                                 self.composeView.frame.size.height,
+                                 self.nevermindButton.frame.size.width,
+                                 self.nevermindButton.frame.size.height
+                             );
+                         }
+                         completion:^(BOOL finished) {
+                             [self.nevermindButton setHidden:NO];
+                         }];
+    }
+    
+    // Photo Image
+    {
+        [UIView animateWithDuration:0.6f
+                              delay:0.0f
+             usingSpringWithDamping:0.7f
+              initialSpringVelocity:1.0f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.composePhotoImageView.frame = CGRectMake(
+                               self.composePhotoImageView.frame.origin.x,
+                               self.composeView.frame.origin.y - self.composePhotoImageView.frame.size.height,
+                               self.composePhotoImageView.frame.size.width,
+                               self.composePhotoImageView.frame.size.height
+                            );
+                         } completion:^(BOOL finished) {
+                             [self.composeView setHidden:YES];
+                         }];
+    }
+
+    // Text | Chat | Quote Image
+    {
+        [UIView animateWithDuration:0.6f
+                              delay:0.1f
+             usingSpringWithDamping:0.7f
+              initialSpringVelocity:1.0f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                            self.composeTextImageView.frame = CGRectMake(
+                                self.composeTextImageView.frame.origin.x,
+                                self.composeView.frame.origin.y - self.composeTextImageView.frame.size.height,
+                                self.composeTextImageView.frame.size.width,
+                                self.composeTextImageView.frame.size.height
+                            );
+                             
+                            self.composeChatImageView.frame = CGRectMake(
+                                self.composeChatImageView.frame.origin.x,
+                                self.composeView.frame.origin.y - self.composeChatImageView.frame.size.height,
+                                self.composeChatImageView.frame.size.width,
+                                self.composeChatImageView.frame.size.height
+                            );
+                             
+                            self.composeQuoteImageView.frame = CGRectMake(
+                                self.composeQuoteImageView.frame.origin.x,
+                                self.composeView.frame.origin.y - self.composeQuoteImageView.frame.size.height,
+                                self.composeQuoteImageView.frame.size.width,
+                                self.composeQuoteImageView.frame.size.height
+                            );
+                         } completion:nil];
+    }
+    
+    // Link | Video Image
+    {
+        [UIView animateWithDuration:0.6f
+                              delay:0.2f
+             usingSpringWithDamping:0.7f
+              initialSpringVelocity:1.0f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                            self.composeLinkImageView.frame = CGRectMake(
+                                self.composeLinkImageView.frame.origin.x,
+                                self.composeView.frame.origin.y - self.composeLinkImageView.frame.size.height,
+                                self.composeLinkImageView.frame.size.width,
+                                self.composeLinkImageView.frame.size.height
+                            );
+                             
+                            self.composeVideoImageView.frame = CGRectMake(
+                                self.composeVideoImageView.frame.origin.x,
+                                self.composeView.frame.origin.y - self.composeVideoImageView.frame.size.height,
+                                self.composeVideoImageView.frame.size.width,
+                                self.composeVideoImageView.frame.size.height
+                            );
+                         } completion:nil];
+    }
 }
 
 - (void)hideLoginView
@@ -317,62 +414,71 @@
     NSLog(@"Show compose view");
     [self.composeView setHidden:NO];
 
+    // Nevermind Button
     {
-        CGRect source;
+        self.nevermindButton.frame = CGRectMake(
+            self.nevermindButton.frame.origin.x,
+            self.composeView.frame.size.height,
+            self.nevermindButton.frame.size.width,
+            self.nevermindButton.frame.size.height
+        );
 
-        CGRect target = self.nevermindButton.frame;
-        target.origin.y = self.composeView.frame.size.height - target.size.height;
-        source = target;
-        source.origin.y = self.composeView.frame.size.height;
-        self.nevermindButton.frame = source;
         [self.nevermindButton setHidden:NO];
-        
         [UIView animateWithDuration:0.3f
                               delay:0.3f
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-                             self.nevermindButton.frame = target;
+                             self.nevermindButton.frame = CGRectMake(
+                                self.nevermindButton.frame.origin.x,
+                                self.composeView.frame.size.height - self.nevermindButton.frame.size.height,
+                                self.nevermindButton.frame.size.width,
+                                self.nevermindButton.frame.size.height
+                             );
                          }
                          completion:nil];
     }
     
-    // GROUP 1: Photo
+    // Photo Image
     {
-        CGRect source;
+        self.composePhotoImageView.frame = CGRectMake(
+            self.composePhotoImageView.frame.origin.x,
+            self.composeView.frame.size.height,
+            self.composePhotoImageView.frame.size.width,
+            self.composePhotoImageView.frame.size.height
+        );
         
-        CGRect targetPhoto = self.composePhotoImageView.frame;
-        source = targetPhoto;
-        source.origin.y += 500;
-        self.composePhotoImageView.frame = source;
-
         [UIView animateWithDuration:0.6f
                               delay:0.0f
              usingSpringWithDamping:0.7f
               initialSpringVelocity:1.0f
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-                             self.composePhotoImageView.frame = targetPhoto;
+                             self.composePhotoImageView.frame = self.composePhotoProxyView.frame;
                          } completion:nil];
     }
     
-    // GROUP 2: Text | Chat | Quote
+    // Text | Chat | Quote Image
     {
-        CGRect source;
+        self.composeTextImageView.frame = CGRectMake(
+            self.composeTextImageView.frame.origin.x,
+            self.composeView.frame.size.height,
+            self.composeTextImageView.frame.size.width,
+            self.composeTextImageView.frame.size.height
+        );
+
+        self.composeChatImageView.frame = CGRectMake(
+            self.composeChatImageView.frame.origin.x,
+            self.composeView.frame.size.height,
+            self.composeChatImageView.frame.size.width,
+            self.composeChatImageView.frame.size.height
+        );
         
-        CGRect targetText = self.composeTextImageView.frame;
-        source = targetText;
-        source.origin.y += 500;
-        self.composeTextImageView.frame = source;
-
-        CGRect targetChat = self.composeChatImageView.frame;
-        source = targetChat;
-        source.origin.y += 500;
-        self.composeChatImageView.frame = source;
-
-        CGRect targetQuote = self.composeQuoteImageView.frame;
-        source = targetQuote;
-        source.origin.y += 500;
-        self.composeQuoteImageView.frame = source;
+        self.composeQuoteImageView.frame = CGRectMake(
+            self.composeQuoteImageView.frame.origin.x,
+            self.composeView.frame.size.height,
+            self.composeQuoteImageView.frame.size.width,
+            self.composeQuoteImageView.frame.size.height
+        );
         
         [UIView animateWithDuration:0.6f
                               delay:0.1f
@@ -380,25 +486,27 @@
               initialSpringVelocity:1.0f
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-                             self.composeTextImageView.frame = targetText;
-                             self.composeChatImageView.frame = targetChat;
-                             self.composeQuoteImageView.frame = targetQuote;
+                             self.composeTextImageView.frame = self.composeTextProxyView.frame;
+                             self.composeChatImageView.frame = self.composeChatProxyView.frame;
+                             self.composeQuoteImageView.frame = self.composeQuoteProxyView.frame;
                          } completion:nil];
     }
     
-    // Group 3: Link | Video
+    // Link | Video Image
     {
-        CGRect source;
+        self.composeLinkImageView.frame = CGRectMake(
+            self.composeLinkImageView.frame.origin.x,
+            self.composeView.frame.size.height,
+            self.composeLinkImageView.frame.size.width,
+            self.composeLinkImageView.frame.size.height
+        );
         
-        CGRect targetLink = self.composeLinkImageView.frame;
-        source = targetLink;
-        source.origin.y += 500;
-        self.composeLinkImageView.frame = source;
-        
-        CGRect targetVideo = self.composeVideoImageView.frame;
-        source = targetVideo;
-        source.origin.y += 500;
-        self.composeVideoImageView.frame = source;
+        self.composeVideoImageView.frame = CGRectMake(
+            self.composeVideoImageView.frame.origin.x,
+            self.composeView.frame.size.height,
+            self.composeVideoImageView.frame.size.width,
+            self.composeVideoImageView.frame.size.height
+        );
         
         [UIView animateWithDuration:0.6f
                               delay:0.2f
@@ -406,8 +514,8 @@
               initialSpringVelocity:1.0f
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-                             self.composeLinkImageView.frame = targetLink;
-                             self.composeVideoImageView.frame = targetVideo;
+                             self.composeLinkImageView.frame = self.composeLinkProxyView.frame;
+                             self.composeVideoImageView.frame = self.composeVideoProxyView.frame;
                          } completion:nil];
     }
 }
